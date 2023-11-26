@@ -1,4 +1,4 @@
-//busqueda_binaria.c
+//bbusquedabinariaNenM_conburbuja_recursivo.c
 //23 de noviembre de 2023
 //
 //Este programa realiza la busqueda binaria de un conjunto de numeros
