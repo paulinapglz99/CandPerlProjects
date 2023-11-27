@@ -1,31 +1,36 @@
 //busqueda_binaria.c
-//23 de noviembre de 2023
+//24 de noviembre de 2023
 //
 //Este programa realiza la busqueda binaria de un conjunto de numeros
+//paulinapglz.99@gmail.com
 
 #include <stdio.h>
-#define TAMANIO 10000
-#define RANGO 20000
-// Declaración de funciones
-void ordenamiento_burbuja(int numero[], int control);
-int buscar(int elementos[], int buscado, int ini, int fin);
+#define TAMANIO 10000   //Definimos el tamanio de nuestro array en 10,000
+#define RANGO 20000     //Nuestro rango hasta 2000
+
+// Declarando funciones
+
+void ordenamiento_burbuja(int numero[], int control);  //para que lo ordene solito
+int buscar(int elementos[], int buscado, int ini, int fin);  
 
 int main(void) {
     //Declarar variables
-    int elementos[TAMANIO] = {0};
+    int elementos[TAMANIO] = {0};  //incializo la var
     int fin;
     int num_elementos, encontrar;
 
     //Mensaje de inicio
-    printf("Este programa es localiza la posicion un numero en un conjunto de maximo %d elementos.\n", TAMANIO);
+    printf("Este programa localiza la posicion un numero en un conjunto de maximo %d elementos.\n", TAMANIO);
 
     //Pedir datos
-    printf("Por favor, ingrese el numero de elementos del conjunto:");
+    printf("Por favor, ingrese el numero de elementos del conjunto de numeros donde se buscara:");
     scanf("%d", &num_elementos);
-    fin=num_elementos;
+    fin=num_elementos;   //indicar cuando termina
 
-    if (num_elementos>TAMANIO||num_elementos<=0){   //Este if se usa si el usuario intenta ingresar mas elementos de los que tiene el arreglo
-        printf("Numero de elementos no valido, deben ser numeros positivos y no mayor a %d", TAMANIO);
+//Este if se usa si el usuario intenta ingresar mas elementos de los que tiene el arreglo
+
+    if (num_elementos>TAMANIO||num_elementos<=0){   
+                printf("Numero de elementos no valido, deben ser numeros positivos y no mayor a %d", TAMANIO);
         return 0;
     }
 
@@ -62,7 +67,8 @@ int main(void) {
     return 0;
 }
 
-//Funcion para el ordenamiento
+//Funcion para el ordenamiento, burbuja
+
 void ordenamiento_burbuja(int numero[],int control){
     int auxiliar;
     for (int l=0;l<control;l++){
@@ -75,7 +81,10 @@ void ordenamiento_burbuja(int numero[],int control){
             }
     }
 }
-//Funcion de busqueda binaria
+
+//Finalmente, funcion de busqueda binaria
+// Se repite este proceso de manera recursiva hasta encontrar el elemento o determinar que no está en el arreglo.
+
 int buscar(int elementos[], int buscado, int ini, int fin){
     int posicion=-1; //Declaramos a pos en -1 que sirve de centinela por si no se encuentra el elemento
     int mitad;
